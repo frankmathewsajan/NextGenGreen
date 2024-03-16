@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>{% block title %}NextGen GreenNRG{% endblock %}</title>
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <script src="https://kit.fontawesome.com/4006cd86d8.js" crossorigin="anonymous"></script>
+    <link href="{% static "GoGreen/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <link href="{% static "GoGreen/cover.css" %}" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark">
+
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">NextGen GreenNRG</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 {% if request.path == '/' %}active{% endif %}" aria-current="page" href="{% url "index" %}">Home</a>
+        <a class="nav-link fw-bold py-1 px-0 {% if request.path == '/login/' %}active{% endif %}" href="{% url "login" %}">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  {% block body %} {% endblock %}
+
+  <footer class="mt-auto text-white-50">
+    <p>Next Generation Green Energy</p>
+  </footer>
+</div>
+<script src="{% static "GoGreen/dist/js/bootstrap.bundle.min.js" %}"></script>
+
+    </body>
+</html>

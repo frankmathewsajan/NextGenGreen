@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}Home - NextGen Green{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "GoGreen/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "GoGreen/css/Cabin.css" %}">
+    <link rel="stylesheet" href="{% static "GoGreen/css/Lora.css" %}">
+    <script src="https://kit.fontawesome.com/4006cd86d8.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="{% static "GoGreen/css/style.css" %}">
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="{% url "index" %}">NextGen Green</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                {% block nav %} {% endblock %}
+            </div>
+        </div>
+    </nav>
+    
+
+    {% block header %} {% endblock %}
+    {% block about %} {% endblock %}
+    {% block login %} {% endblock %}
+    {% block register %} {% endblock %}
+
+    <footer>
+        <div class="container text-center">
+            <p>Copyright ©&nbsp;NextGen Green 2024</p>
+        </div>
+    </footer>
+    <script src="{% static "GoGreen\dist\js\bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "GoGreen\js\grayscale.js" %}"></script>
+    <script src="{% static "GoGreen\js\script.js" %}"></script>
+</body>
+
+</html>

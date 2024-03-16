@@ -1,0 +1,103 @@
+{% extends "GoGreen/layout.html" %}
+{% load static %}
+
+{% block nav %}
+<ul class="navbar-nav ms-auto">
+  <li class="nav-item nav-link"><a class="nav-link active" href="{% url "home" %}">#</a></li>
+  <li class="nav-item nav-link"><a class="nav-link" href="{% url "blogs" %}">Blogs</a></li>
+  <li class="nav-item nav-link"><a class="nav-link" href="{% url "profile" %}"><i class='fa fa-user'></i> {{user.username}} </a></li>
+  <li class="nav-item nav-link"><a class="nav-link" href="{% url "logout" %}"><i class='fa-solid fa-sign-out'></i></a></li>
+</ul>
+{% endblock %}
+{% block header %}
+
+<style>
+    img {
+        visibility: visible !important;
+        display: contents;
+    }
+    .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px;
+        color: #fff;
+        text-align: center;
+    }
+</style> 
+<header class="masthead bg-text">
+  <div class="intro-body">
+      <div class="container">
+        <div class="row">
+            <div id="carousel" class="carousel slide" style="margin-top: 5pc;" data-bs-ride="false">
+                <div class="carousel-indicators mt-1">
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'GoGreen/img/1.jpg' %}" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Partner with Green Initiative. Make a World of Difference.</h5>
+                      <p>Elevate your business standards with our Climate Action and Nature Positive Advisory Services and Certifications.</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'GoGreen/img/2.jpg' %}" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Connect your Business with Nature Positive Impacts</h5>
+                      <button class="btn btn-outline-success mb-4">GET FOREST FRIENDS CERTIFIED</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'GoGreen/img/3.jpg' %}" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>In Tourism? Download The Climate Action Guide for Tourism Destinations.</h5>
+                      <button class="btn btn-outline-success mb-4">Learn More</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'GoGreen/img/4.jpg' %}" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Where are Climate and Nature in Your Business Strategy?</h5>
+                      <button class="btn btn-outline-success mb-4">Learn More</button>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'GoGreen/img/3.jpg' %}" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Measure, Reduce and Verify. Drive your Climate Action Goals Forward.</h5>
+                      <button class="btn btn-outline-success mb-4">Learn More</button>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+
+      </div>
+  </div>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <h1 style='color: #439876'>The Green Initiative Advises and Certifies Organizations that seek to Accelerate Progress toward Climate and Nature Positive Impacts</h1>
+            <p>We design creative solutions for organizations to address climate and nature risks, market challenges, and innovation opportunities, adding value to their offers and connecting them with the Paris Agreement, the Convention on Biological Diversity, and the United Nations Sustainable Development Goals (SDGs).</p>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

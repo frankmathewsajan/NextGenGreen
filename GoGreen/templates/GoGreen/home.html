@@ -1,0 +1,153 @@
+{% extends "GoGreen/layout.html" %}
+{% load static %}
+
+
+{% block nav %}
+<ul class="navbar-nav ms-auto">
+  <li class="nav-item nav-link"><a class="nav-link active" href="#about">About</a></li>
+  <li class="nav-item nav-link"><a class="nav-link" href="#login">Login</a></li>
+  <li class="nav-item nav-link"><a class="nav-link" href="#register">Register</a></li>
+</ul>
+{% endblock %}
+{% block header %}
+
+<style>
+
+  .bg-image {
+
+    background-image: url("{% static "GoGreen/img/forest.jpg" %}");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  .bg-image-login {
+
+    background-image: url("{% static "GoGreen/img/forest_.jpg" %}");
+    height: 100%;
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  .bg-text {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50%;
+    height: 65%;
+    border: 2px solid white;
+
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.6); 
+  }
+
+  .bg-login-text {
+    
+    position: absolute;
+    top: 120pc;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50%;
+    height: 65%;
+
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.6); 
+  }
+</style>  
+<div class='bg-image'></div>
+<header class="masthead bg-text">
+  <div class="intro-body">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 mx-auto">
+                  <h1 class="brand-heading">NEXTGEN Green</h1>
+                  <p class="fs-5 intro-text">“Welcome to our NextGen Green Initiative website. Together, we can make a difference!”</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+{% endblock %}
+{% block about %}
+<section class="text-center content-section" id="about">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <h2>About THIS</h2>
+              <p><br>This is a platform dedicated to promoting sustainable living and environmental conservation. Here, you’ll find a wealth of resources on eco-friendly practices, renewable energy, waste management, and more. Join us as we work towards a greener, healthier planet for future generations.<br><br></p>
+              <p>At the Green Initiative we have the necessary know-how to enable our clients to lead this transformation through actions that generate positive impacts for their organizations, as well as for the planet.</p>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock %}
+{% block login %}
+<div class='bg-image-login' id="login"></div>
+<section class="text-center download-section content-section bg-login-text" >
+  <div class="col-lg-8 mx-auto">
+    <main class="px-3">
+      {% if message %}
+      <div>{{ message }}</div>
+      {% endif %}
+      <form action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+          <h3 class="float-start mb-3">Login</h3>
+          <div class="mb-3">
+              <input  type="text" class="form-control" id="username" placeholder="Username" name="username">
+          </div>
+          <div class="mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+              
+          </div>
+          <div class='float-start'>Not registered yet? <a href='#register'>Register Now</a></div>
+          <button type="submit" class="btn btn-outline-light float-end btn-lg btn-default">Login</button>
+      </form>
+    </main>
+</div>
+</section>
+{% endblock%}
+
+{% block register%}
+<section class="text-center content-section "  id="register">
+  <div class="container">
+      <div class="row" >
+          <div class="col-lg-8 mx-auto">
+              {% if message %}
+                <div>{{ message }}</div>
+              {% endif %}
+              <form action="{% url 'register' %}" method="post">
+                  {% csrf_token %}
+                  <h3 class="float-start my-3">Register</h3>
+                  <div class="mb-3">
+                      <input class="form-control" type="text" name="username" placeholder="Username">
+                  </div>
+
+                  <div class="mb-3 text-black">
+                      <input class="form-control" type="email" name="email" placeholder="Email Address">
+                  </div>
+
+                  <div class="mb-3">
+                      <input class="form-control" type="password" name="password" placeholder="Password">
+                  </div>
+
+                  <div class="mb-3">
+                      <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+                  </div>
+                  <div class='float-start'>Already a member? <a href='#login'>Login</a></div>
+                  <button type="submit" class="btn btn-outline-dark float-end m-3 btn-default">Register</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+{% endblock%}
